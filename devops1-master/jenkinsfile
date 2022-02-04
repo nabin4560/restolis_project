@@ -11,8 +11,7 @@ pipeline {
         }
         stage('Upload War To Nexus'){
             steps{
-               
-  
+            nexusArtifactUploader artifacts: [[artifactId: 'RestaurantProj', classifier: '', file: '/var/lib/jenkins/jobs/pipeline/config.xml', type: 'jar']], credentialsId: '2fe993aa-6227-45ce-93ae-dd389a4d2bf4', groupId: 'com.thbs', nexusUrl: '3.15.209.30:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-snapshots', version: '0.0.1-SNAPSHOT'
             }
         }
     }
